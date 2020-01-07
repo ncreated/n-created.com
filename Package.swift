@@ -8,7 +8,7 @@ let package = Package(
         .executable(name: "Ncreatedcom", targets: ["Ncreatedcom"])
     ],
     dependencies: [
-        .package(url: "https://github.com/johnsundell/publish.git", from: "0.1.0")
+        .package(url: "https://github.com/johnsundell/publish.git", from: "0.2.0")
     ],
     targets: [
         .target(
