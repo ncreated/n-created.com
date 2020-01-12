@@ -22,11 +22,12 @@
 /* Color palette: https://colorhunt.co/palette/7817 */
 
 :root {
-    --website-background-color: #ecf0f1;
-    --website-content-background-color: #F7F7F0;
-    --website-text-color: #34495e;
-    --header-color: #3498db;
-    --navigation-items-color: #f1c40f;
+    --website-background-color: ${website-background-color};
+    --website-content-background-color: ${website-content-background-color};
+    --website-text-color: ${website-text-color};
+    --header-color: ${header-color};
+    --navigation-items-color: ${navigation-items-color};
+    --navigation-items-text-color: ${navigation-items-text-color};
 }
 
 /* Global */
@@ -140,7 +141,7 @@ p {
     margin: 2px;
 
     line-height: 30px;
-    color: white;
+    color: var(--navigation-items-text-color);
     font-size: 1em;
     text-align: center;
     flex-grow: 1;

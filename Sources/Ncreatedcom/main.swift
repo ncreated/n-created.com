@@ -61,8 +61,32 @@ let navigation = Navigation(
     ]
 )
 
-try Ncreatedcom().publish(
-    withTheme: .ncreated(using: navigation),
-    indentation: .tabs(1),
-    deployedUsing: .gitHub("ncreated/ncreated.github.io", useSSH: true)
+let colorsReplacement = StringReplace(
+    replacements: [
+        (source: "website-background-color",         target: "#ecf0f1"),
+        (source: "website-content-background-color", target: "#F7F7F0"),
+        (source: "website-text-color",               target: "#34495e"),
+        (source: "header-color",                     target: "#3498db"),
+        (source: "navigation-items-color",           target: "#f1c40f"),
+        (source: "navigation-items-text-color",      target: "#F7F7F0"),
+    ],
+    filePaths: [
+        "styles.css",
+        "social-icons/github.svg",
+        "social-icons/instagram.svg",
+        "social-icons/linkedin.svg",
+        "social-icons/medium.svg",
+        "social-icons/twitter.svg",
+    ]
 )
+
+try Ncreatedcom().publish(
+    using: [
+        .optional(.copyResources()),
+        .addMarkdownFiles(),
+        .generateHTML(withTheme: .ncreated(using: navigation), indentation: .tabs(1)),
+        .stringReplace(colorsReplacement),
+        .unwrap(.gitHub("ncreated/ncreated.github.io", useSSH: true), PublishingStep.deploy)
+    ]
+)
+

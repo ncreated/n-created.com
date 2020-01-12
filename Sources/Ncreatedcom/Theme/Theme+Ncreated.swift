@@ -6,9 +6,9 @@ extension Theme {
         Theme(
             htmlFactory: NcreatedHTMLFactory(navigation: navigation),
             resourcePaths: [
-                "Resources/NcreatedTheme/styles.css",
-                "Resources/NcreatedTheme/fonts/SourceSansPro-Light.ttf",
-                "Resources/NcreatedTheme/fonts/SourceSansPro-Regular.ttf",
+                "Theme/styles.css",
+                "Theme/fonts/SourceSansPro-Light.ttf",
+                "Theme/fonts/SourceSansPro-Regular.ttf",
             ]
         )
     }
