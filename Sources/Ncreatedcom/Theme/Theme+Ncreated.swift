@@ -108,7 +108,7 @@ private extension Node where Context == HTML.BodyContext {
                 .text(". Source code available "),
                 .a(
                     .text("here"),
-                    .href("https://github.com/ncreated/n-created.com")
+                    .href("https://github.com/ncreated/ncreated.com")
                 ),
                 .text(".")
             )

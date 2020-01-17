@@ -24,8 +24,8 @@ struct Ncreatedcom: Website {
 
     struct ItemMetadata: WebsiteItemMetadata {}
 
-    var url = URL(string: "https://n-created.com")!
-    var name = "n-created.com"
+    var url = URL(string: "https://ncreated.com")!
+    var name = "ncreated.com"
     var description = ""
     var language: Language { .english }
     var imagePath: Path? { nil }
@@ -82,7 +82,7 @@ let colorsReplacement = StringReplace(
 
 try Ncreatedcom().publish(
     using: [
-        .optional(.copyResources()),
+        .copyResources(),
         .addMarkdownFiles(),
         .generateHTML(withTheme: .ncreated(using: navigation), indentation: .tabs(1)),
         .stringReplace(colorsReplacement),
